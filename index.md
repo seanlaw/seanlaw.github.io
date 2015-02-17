@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Data
-tagline: Science
+title: The Science of Data
+tagline: 
 ---
 {% include JB/setup %}
 
