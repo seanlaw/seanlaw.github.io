@@ -8,6 +8,7 @@ sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
 sup{top:-0.5em;}
 sub{bottom:-0.25em;}
 img{max-width:100%;height:auto;border:0;-ms-interpolation-mode:bicubic;}
+.posts i{color:#C0C0C0;}
 button,input,select,textarea{margin:0;font-size:100%;vertical-align:middle;}
 button,input{*overflow:visible;line-height:normal;}
 button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0;}
@@ -18,8 +19,10 @@ textarea{overflow:auto;vertical-align:top;}
 .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";}
 .clearfix:after{clear:both;}
 body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;color:#333333;background-color:#ffffff;}
-a{color:#0088cc;text-decoration:none;}
-a:hover{color:#005580;text-decoration:underline;}
+a:link,a:visited,a:active{color:#08c;text-decoration:none;}
+a:hover{color:#666666;text-decoration:underline;}
+h2 a:link,h2 a:visited,h2 a:active{color:#505050;text-decoration:none;}
+h2 a:hover{color:#CCCCCC;text-decoration:none;}
 .row{margin-left:-20px;*zoom:1;}.row:before,.row:after{display:table;content:"";}
 .row:after{clear:both;}
 [class*="span"]{float:left;margin-left:20px;}
