@@ -6,7 +6,7 @@ header: About
 ---
 {% include JB/setup %}
 
-<img style="margin-right: 20px;" align="left" src="{{site.url}}/assets/images/seanlaw.small.png">
+<img style="margin-right: 20px;" align="left" src="{{site.url}}/assets/images/seanlaw.thumb.png">
 I work on a multi-talented advanced technology and innovation team. My role as a data scientist includes data munging, developing cutting edge methodologies, building predictive models, and mentoring.
 <br>
 <br>
