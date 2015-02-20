@@ -1,1 +1,2 @@
-about.md
+Author: Sean M. Law
+Website: seanlaw.github.io
