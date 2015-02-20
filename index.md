@@ -1,22 +1,15 @@
 ---
 layout: page
-title: The Science of Data
-tagline:  
+title: Sean Law
+tagline: Data Scientist
+header: About
 ---
 {% include JB/setup %}
 
-<ul class="posts">
-  {% for post in site.posts %}
-    <li>
-      <h2>
-      <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
-      </h2>
-      <br>
-      <p class="greydate">{{ post.date | date: "%B %-d %Y" }}</p>
-      <br>
-      <p>{{ post.excerpt }}</p>
-      <br><br>
-    </li>
-  {% endfor %}
-</ul>
-
+<img style="margin-right: 20px;" align="left" src="{{site.url}}/assets/images/seanlaw.small.png">
+I work on a multi-talented advanced technology and innovation team. My role as a data scientist includes data munging, developing cutting edge methodologies, building predictive models, and mentoring.
+<br>
+<br>
+Previously, I was a scientist for over 10 years. My work focused on protein-protein and protein-nucleic acid interactions and developing state-of-the-art computational methods to understand complex biological systems. An updated list of my peer-reviewed scientific publications can be found [here](http://scholar.google.com/citations?user={{ site.author.googlescholar }}).
+<br>
+<br>
