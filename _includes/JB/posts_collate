@@ -29,10 +29,14 @@ Usage:
     {% if forloop.first %}
       <h2>{{this_year}}</h2>
       <h3>{{this_month}}</h3>
-      <ul>
+      <br>
+      <ul class="posts">
     {% endif %}
   
-    <li><span>{{ post.date | date: "%B %e, %Y" }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+    <li>
+      <h4><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a><h4> <p class="greydate">{{ post.date | date: "%B %-d %Y"  }}</p>
+      <br>
+    </li>
   
     {% if forloop.last %}
       </ul>
