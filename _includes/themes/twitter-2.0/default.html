@@ -42,11 +42,21 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+          {% if site.author.twitter %}
           <a class="brand" href="http://www.twitter.com/{{ site.author.twitter }}"><i class="fa fa-twitter fa-inverse"></i></a>
+          {% endif %}
+          {% if site.author.github %}
           <a class="brand" href="http://www.github.com/{{ site.author.github  }}"><i class="fa fa-github fa-inverse"></i></a>
+          {% endif %}
+          {% if site.author.linkedin %}
           <a class="brand" href="http://www.linkedin.com/in/{{ site.author.linkedin }}"><i class="fa fa-linkedin fa-inverse"></i></a>
-          <a class="brand" href="http://scholar.google.com/citations?user={{ site.author.googlescholar }}"><i class="fa fa-pencil fa-inverse"></i></a>
+          {% endif %}
+          {% if site.author.googlescholar %}
+          <a class="brand" href="http://scholar.google.com/citations?user={{ site.author.googlescholar }}"><i class="fa fa-graduation-cap fa-inverse"></i></a>
+          {% endif %}
+          {% if site.author.email %}
           <a class="brand" href="mailto:{{ site.author.email }}"><i class="fa fa-envelope fa-inverse"></i></a>
+          {% endif %}
           <div class="nav-collapse">
             <ul class="nav">
               {% assign pages_list = site.pages %}
