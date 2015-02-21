@@ -1,8 +1,8 @@
 ---
 layout: page
-title: pyESL
+title: PyESL
 tagline: Elements of Statistical Learning in Python
-header: pyESL
+header: PyESL
 group: navigation
 ---
 {% include JB/setup %}

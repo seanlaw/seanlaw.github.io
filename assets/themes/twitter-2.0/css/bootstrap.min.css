@@ -20,12 +20,12 @@ textarea{overflow:auto;vertical-align:top;}
 body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:18px;color:#333333;background-color:#ffffff;}
 a:link,a:visited,a:active{color:#00155e;font-weight:bold;text-decoration:none;}
 a:hover{color:#666666;text-decoration:underline;}
-h2 a:link,h2 a:visited,h2 a:active{color:#505050;text-decoration:none;}
-h2 a:hover{color:#CCCCCC;text-decoration:none;}
-h3 a:link,h3 a:visited,h3 a:active{color:#505050;text-decoration:none;}
-h3 a:hover{color:#CCCCCC;text-decoration:none;}
-h4 a:link,h4 a:visited,h4 a:active{color:#505050;text-decoration:none;}
-h4 a:hover{color:#CCCCCC;text-decoration:none;}
+h2 a:link,h2 a:visited,h2 a:active{color:#00155e;text-decoration:none;}
+h2 a:hover{color:#666666;text-decoration:none;}
+h3 a:link,h3 a:visited,h3 a:active{color:#00155e;text-decoration:none;}
+h3 a:hover{color:#666666;text-decoration:none;}
+h4 a:link,h4 a:visited,h4 a:active{color:#00155e;text-decoration:none;}
+h4 a:hover{color:#666666;text-decoration:none;}
 .row{margin-left:-20px;*zoom:1;}.row:before,.row:after{display:table;content:"";}
 .row:after{clear:both;}
 [class*="span"]{float:left;margin-left:20px;}
