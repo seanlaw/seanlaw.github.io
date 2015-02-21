@@ -9,7 +9,7 @@ header: About
 <img class="img-left" align="left" src="{{site.url}}/assets/images/seanlaw.thumb.png">
 <h3>About</h3> 
 <br>
-I am a data scientist working on a multi-talented advanced technology and innovation team. I have experience producing <a href="http://pubs.acs.org/doi/abs/10.1021/jz501811k">cutting edge methodologies</a>, building <a href="http://onlinelibrary.wiley.com/doi/10.1002/jcc.23683/abstract">high-performance predictive models</a>, and developing rapid prototypes.
+I am a data scientist currently working on a multi-talented advanced technology and innovation team. I have experience producing <a href="http://pubs.acs.org/doi/abs/10.1021/jz501811k">cutting edge methodologies</a>, building <a href="http://onlinelibrary.wiley.com/doi/10.1002/jcc.23683/abstract">high-performance predictive models</a>, and developing rapid prototypes.
 <br><br>
 For data munging, analysis, and deep dives, I use the <a href="http://www.pydata.org">PyData stack</a>. However, various command-line tools can be found in my daily arsenal.
 <br><br>
