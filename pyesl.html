@@ -8,9 +8,11 @@ group: navigation
 {% include JB/setup %}
 
 Inspired by Carl Vogel's <a href="http://slendermeans.org/pages/will-it-python.html">site</a>, PyESL chronicles my journey through each chapter of "Elements of Statistical Learning" using Python.
-<br><br>
+<br>
+<br>
 {% assign posts = site.tags['pyesl'] | sort:"weight"%}
 {% for post in posts %}
   <h3><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3>
-  <br><br>
+  <p class="greydate">{{ post.date | date: "%B %-d %Y" }}</p>
+  <br>
 {% endfor %}
