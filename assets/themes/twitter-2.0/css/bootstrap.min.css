@@ -18,7 +18,7 @@ textarea{overflow:auto;vertical-align:top;}
 .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";}
 .clearfix:after{clear:both;}
 body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:18px;color:#333333;background-color:#ffffff;}
-a:link,a:visited,a:active{color:#08c;text-decoration:none;}
+a:link,a:visited,a:active{color:#00155e;font-weight:bold;text-decoration:none;}
 a:hover{color:#666666;text-decoration:underline;}
 h2 a:link,h2 a:visited,h2 a:active{color:#505050;text-decoration:none;}
 h2 a:hover{color:#CCCCCC;text-decoration:none;}
@@ -643,3 +643,4 @@ a.thumbnail:hover{border-color:#0088cc;-webkit-box-shadow:0 1px 4px rgba(0, 105,
 .social-icon:hover{color:#666;text-decoration:none;}
 .social-icon{float:left;display:block;padding:8px 20px 12px;margin-left:-20px;font-size:20px;font-weight:200;line-height:1;color:#FFF;}
 .navbar-inner{background-color:#CCC;}
+.img-left{margin-right:20px;margin-bottom:10px;}
