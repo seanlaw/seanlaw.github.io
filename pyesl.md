@@ -13,6 +13,6 @@ Inspired by Carl Vogel's <a href="http://slendermeans.org/pages/will-it-python.h
 <br>
 {% assign posts = site.tags['pyesl'] | sort:"weight"%}
 {% for post in posts %}
-  <h4><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h4>
+  <h3><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3>
   <br><br>
 {% endfor %}
