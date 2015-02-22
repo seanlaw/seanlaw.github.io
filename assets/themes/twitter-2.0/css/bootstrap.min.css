@@ -644,6 +644,6 @@ a.thumbnail:hover{border-color:#0088cc;-webkit-box-shadow:0 1px 4px rgba(0, 105,
 .social-icon{float:left;display:block;padding:8px 20px 12px;margin-left:-20px;font-size:20px;font-weight:200;line-height:1;color:#FFF;}
 .navbar-inner{background-color:#CCC;}
 .img-left{margin-right:20px;margin-bottom:10px;width:150px;text-align:justify;}
-input[type="text"]{font-family:FontAwesome;}
+input[type="text"]{font-family:FontAwesome,"Helvetica Neue",Helvetica,Arial,sans-serif;}
 li.search{padding-left:10px;}
 form.search{float:left;display:inline;padding:6px 20px 12px;margin-left:-20px;margin-bottom:-18px;font-size:20px;font-weight:400;line-height:1;color:#ffffff;}}
