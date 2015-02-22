@@ -6,7 +6,7 @@ header: About
 ---
 {% include JB/setup %}
 
-<img class="img-left" align="left" src="{{site.url}}/assets/images/seanlaw.thumb.png">
+<img class="img-left" align="left" src="/images/seanlaw.thumb.png">
 <h3>About</h3> 
 <br>
 I am a <a href="https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century/">data scientist</a> currently working with a multi-talented advanced technology and innovation team. I have experience producing <a href="http://pubs.acs.org/doi/abs/10.1021/jz501811k">cutting edge methodologies</a>, building <a href="http://onlinelibrary.wiley.com/doi/10.1002/jcc.23683/abstract">high-performance predictive models</a>, and developing rapid prototypes.
