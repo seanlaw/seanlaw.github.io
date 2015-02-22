@@ -13,12 +13,17 @@
             {% assign posts = site.tags['pyesl'] | sort:"weight" %}
             {% for post in posts %}
               {% if post.url == page.url %}
-              {% if post.previous %}
-                <li class="prev"><a href="{{ BASE_PATH }}{{ post.previous.url }}" title="{{ post.previous.title }}">&larr; Previous</a></li>
-              {% endif %}
-              {% if post.next %}
-                <li class="next"><a href="{{ BASE_PATH }}{{ post.next.url }}" title="{{ post.next.title }}">Next &rarr;</a></li>
-              {% endif %}
+                {% assign last_inx = forloop.index0 | minus:1 %} 
+                {% if forloop.first == false %}
+                  <li class="prev"><a href="{{ BASE_PATH }}{{ posts[last_inx].url }}" title="{{ posts[last_inx].title }}">&larr; Previous</a></li>
+                {% else %}
+                  <li class="prev disabled"><a>&larr; Previous</a></li>
+                {% endif %}
+                <li><a href="{{ BASE_PATH }}{{ site.JB.pyesl_path }}">PyESL</a></li>
+                {% if forloop.last == false %}
+                  {% assign next_inx = forloop.index0 | plus:1 %}
+                  <li class="next"><a href="{{ BASE_PATH }}{{ posts[next_inx].url }}" title="{{ posts[next_inx].title }}">Next &rarr;</a></li>
+                {% endif %}
               {% endif %}
             {% endfor %}
           </ul>
