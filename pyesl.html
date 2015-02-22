@@ -11,7 +11,7 @@ group: navigation
 <p>Inspired by Carl Vogel's <a href="http://slendermeans.org/pages/will-it-python.html">site</a>, PyESL chronicles my journey through each chapter of <a href="http://statweb.stanford.edu/~tibs/ElemStatLearn/">Elements of Statistical Learning</a> using <a href="http://www.python.org">Python</a>. Check back for ongoing updates!</p>
 <br>
 <br>
-{% assign posts = site.tags['pyesl'] | sort:"weight"%}
+{% assign posts = site.tags['pyesl'] | sort:"weight" %}
 {% for post in posts %}
   <h3><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3>
   <p class="greydate">{{ post.date | date: "%B %-d %Y" }}</p>
