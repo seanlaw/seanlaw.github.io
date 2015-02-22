@@ -2,7 +2,7 @@
 layout: post
 title: pyESL - Chapter 1
 tagline: Elements of Statistical Learning in Python
-published: true
+published: false
 tags: [pyesl]
 weight: 1
 ---

@@ -14,7 +14,7 @@ group: navigation
       </h3>
       <p class="greydate">{{ post.date | date: "%B %-d %Y" }}</p>
       <br>
-      <p>{{ post.content }}</p>
+      <p>{{ post.content | split:'<!--more-->' | first }}</p>
       <br style="clear:both">
       <br><br>
     </li>
