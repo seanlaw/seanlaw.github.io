@@ -35,6 +35,8 @@
                 {% if forloop.last == false %}
                   {% assign next_inx = forloop.index0 | plus:1 %}
                   <li class="next"><a href="{{ BASE_PATH }}{{ posts[next_inx].url }}" title="{{ posts[next_inx].title }}">Next &rarr;</a></li>
+                {% else %}
+                  <li class="next disabled"><a>Next &rarr;</a>
                 {% endif %}
               {% endif %}
             {% endfor %}
