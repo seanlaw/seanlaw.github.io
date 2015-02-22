@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
   -->
     {% include google/analytics %}
+    {% include google/search %}
   </head>
 
   <body>
@@ -64,6 +65,11 @@
               {% assign pages_list = site.pages %}
               {% assign group = 'navigation' %}
               {% include JB/pages_list %}
+              <li class="search">
+                <form class="search" onsubmit="my_search_google()">
+                  <input type="text" id="my-google-search" placeholder="&#xf002; Search" />
+                </form>
+              </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
