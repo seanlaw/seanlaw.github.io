@@ -5,7 +5,19 @@
 <div class="row">
   <div class="span8">
     {{ content }}
-    <hr>
+    <hr style="clear:both;">
+    <div style="display:inline;float:left;">
+      <h4>Published</h4>
+      <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
+      {% unless page.tags == empty %}
+        <h4>Tags</h4>
+        <ul class="tag_box">
+          {% assign tags_list = page.tags %}
+          {% include JB/tags_list %}
+        </ul>
+      {% endunless %}
+    </div>
+
     <div class="pagination">
       {% for tag in page.tags %}
         {% if tag == "pyesl"%}
@@ -44,19 +56,6 @@
       {% endif %}
       </ul>
     </div>
-  </div>
-
-  <div class="span4">
-    <h4>Published</h4>
-    <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
-
-  {% unless page.tags == empty %}
-    <h4>Tags</h4>
-    <ul class="tag_box">
-    {% assign tags_list = page.tags %}
-    {% include JB/tags_list %}
-    </ul>
-  {% endunless %}
   </div>
 </div>
 
