@@ -14,9 +14,16 @@ group: navigation
       </h3>
       <p class="greydate">{{ post.date | date: "%B %-d %Y" }}</p>
       <br>
-      <p>{{ post.content | split:'<!--more-->' | first }}</p>
+      <p>{{ post.content | split:'<!--more-->' | first }} </p>
       <br style="clear:both">
-      <br><br>
+      <div class="pagination" style="float:left;">
+      <ul>
+      <li><a class="pagination" href="{{ BASE_PATH }}{{ page.url }}" title="{{ page.title }}">Read more</a></li>
+      </ul>
+      </div>
+      <br style="clear:both">
+      <hr>
+      <br>
     </li>
   {% endfor %}
 </ul>
