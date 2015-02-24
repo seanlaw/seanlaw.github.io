@@ -1,9 +1,3 @@
-{% if JB.comments.provider %}
-HERE
-{% else %}
-{{ JB.comments.provider  }}
-{% endif %}
-
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
