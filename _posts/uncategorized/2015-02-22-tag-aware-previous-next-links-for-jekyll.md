@@ -5,8 +5,10 @@ title: Tag Aware Previous/Next Links for Jekyll
 Creating and maintaining a vanilla Jekyll-Boostrap website is pretty straightforward. However, I couldn't find an obvious way to customize the previous/next links below each blog post so that:
 <br><br>
 
-    1. The links were aware of the tags listed in the front matter
-    2. The method did not depend on plugin (since my site is being hosted on Github)
+<ol style="margin-left:20px;">
+<li>The links were aware of the tags listed in the front matter</li>
+<li>The method did not depend on plugin (since my site is being hosted on Github)</li>
+</ol>
 
 <br>
 After tonnes of digging, I managed to piece together a Liquid-based solution (see my last post, to see how I add <a href="{{ page.previous.url }}">Liquid code in Jekyll</a>)!
