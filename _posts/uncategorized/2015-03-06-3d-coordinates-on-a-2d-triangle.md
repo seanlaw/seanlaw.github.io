@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 3D Coordinates on a Triangle
+title: 3D Coordinates Represented on a 2D Triangle
 ---
 
 <img class="img-left" align="left" src="{{ site.url }}/images/3dtriangle.png">
