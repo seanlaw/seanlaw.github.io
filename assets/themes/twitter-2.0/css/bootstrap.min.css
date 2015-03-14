@@ -87,6 +87,7 @@ h6{font-size:11px;color:#999999;text-transform:uppercase;}
 .page-header h1{line-height:1;}
 ul,ol{padding:0;margin:0;}
 ul.posts,ol.posts{padding:0;margin:0;list-style-type:none;}
+ul.posts ol, ul.posts ul{padding:0;margin:20px;}
 ul ul,ul ol,ol ol,ol ul{margin-bottom:0;}
 ul{list-style:disc;}
 ol{list-style:decimal;}
