@@ -1,8 +1,12 @@
 ---
 layout: post
-title: Title
-tag: pyesl
-weight: 100
+title: pyESL - Chapter 0.0 - Title
+tagline: Elements of Statistical Learning in Python
+published: false
+tags: [pyesl]
+weight: 1
 ---
 
-#<img class="img-left" align="left" src="{{ site.url }}/images/">
+<!--
+<img class="img-left" align="left" src="{{ site.url }}/images/">
+-->
