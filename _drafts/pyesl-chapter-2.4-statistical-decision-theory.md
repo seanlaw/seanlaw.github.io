@@ -2,7 +2,7 @@
 layout: post
 title: pyESL - Chapter 2.4 - Statistical Decision Theory
 tagline: Elements of Statistical Learning in Python
-published: false
+published: true
 tags: [pyesl]
 weight: 2.4
 ---
