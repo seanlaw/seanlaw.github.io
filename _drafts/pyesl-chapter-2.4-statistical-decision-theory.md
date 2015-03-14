@@ -9,12 +9,17 @@ weight: 2.4
 <!--
 <img class="img-left" align="left" src="{{ site.url }}/images/">
 -->
-
+Deriving the expected prediction error (EPE)
 \\[
 \begin{align} 
-{RSS} &= (\textbf{Y} - \textbf{X}{\beta})^{T}(\textbf{Y} - \textbf{X}{\beta}) \\\
-&= \textbf{Y}^{T}\textbf{Y} - \textbf{Y}^{T}\textbf{X}{\beta} - {\beta}^{T}\textbf{X}^{T}\textbf{Y} + {\beta}^{T}\textbf{X}^{T}\textbf{X}{\beta} \qquad \because\textbf{AB}^{T}=\textbf{B}^{T}\textbf{A}^{T} \\\
-&= \textbf{Y}^{T}\textbf{Y} - 2\textbf{Y}^{T}\textbf{X}{\beta} + {\beta}^{T}\textbf{X}^{T}\textbf{X}{\beta} \qquad \because \textbf{Y}^{T}\textbf{X}{\beta} = \textbf{X}^{T}{\beta}^{T}\textbf{Y} \\\
+EPE(f) &= E(Y-f(X))^2 \\\
+&= \int [y-f(x)]^2~Pr(dx,dy) \\\
+&= \int [y-f(x)]^2~p(x,y)~dxdy \\\
+&= \int_x \int_y [y-f(x)]^2~p(x,y)~dxdy \\\
+&= \int_x \int_y [y-f(x)]^2p(x)~p(y|x)~dxdy \\\
+&= \int_x \left(\int_y [y-f(x)]^2~p(y|x)~dy\right)~p(x)~dx \\\
+&= \int_x \left(E_{Y|X}([Y-f(X)]^2|X = x)\right)~p(x)dx \\\
+&= E_X \\\
 \end{align}
 \\]
 
