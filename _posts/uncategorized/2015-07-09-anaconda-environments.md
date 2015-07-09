@@ -32,4 +32,4 @@ And to stop using (deactivate) the environment:
 source deactivate py34
 {% endhighlight %}
 <br><br>
-It's that easy! When call Python now, it should revert back to your root environment.
+It's that easy! When you call Python now, it should revert back to your root environment.
