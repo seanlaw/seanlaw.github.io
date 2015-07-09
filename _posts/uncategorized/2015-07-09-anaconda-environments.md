@@ -26,6 +26,11 @@ source activate py34
 <br><br>
 Notice that we activate the reference tag "py34" that we chose above. Also, note that this new directory will be prepended to your path and the root Python directory will be removed (but Anaconda keeps track of all of this for you)
 <br><br>
+{% highlight python %}
+bash-3.2$ python
+Python 3.4.3 |Anaconda 2.3.0 (x86_64)| (default, Mar  6 2015, 12:07:41) 
+{% endhighlight %}
+<br><br>
 And to stop using (deactivate) the environment:
 <br><br>
 {% highlight python %}
@@ -33,3 +38,9 @@ source deactivate py34
 {% endhighlight %}
 <br><br>
 It's that easy! When you call Python now, it should revert back to your root environment.
+<br><br>
+{% highlight python %}
+bash-3.2$ python
+Python 2.7.10 |Anaconda 2.2.0 (x86_64)| (default, May 28 2015, 17:04:42) 
+Type "copyright", "credits" or "license" for more information.
+{% endhighlight %}
