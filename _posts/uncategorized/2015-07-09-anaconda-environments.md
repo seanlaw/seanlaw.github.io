@@ -42,5 +42,4 @@ It's that easy! When you call Python now, it should revert back to your root env
 {% highlight python %}
 bash-3.2$ python
 Python 2.7.10 |Anaconda 2.2.0 (x86_64)| (default, May 28 2015, 17:04:42) 
-Type "copyright", "credits" or "license" for more information.
 {% endhighlight %}
