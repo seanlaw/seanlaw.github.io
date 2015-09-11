@@ -15,8 +15,7 @@ group: navigation
       <p class="greydate">{{ post.date | date: "%b %-d, %Y" }}</p>
       <br>
       <p>{{ post.content | split:'<!--more-->' | first }} </p>
-      <br style="clear:both">
-      <div class="pagination" style="float:left;">
+      <div class="pagination" style="float:right;">
       <ul>
       <li><a class="pagination" href="{{ BASE_PATH }}{{ post.url }}" title="{{ post.title }}">Read more</a></li>
       </ul>
