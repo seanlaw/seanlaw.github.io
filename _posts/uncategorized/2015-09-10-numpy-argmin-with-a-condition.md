@@ -5,7 +5,7 @@ title: Using NumPy Argmin or Argmax Along with a Conditional
 
 <img class="img-left" align="left" src="{{ site.url }}/images/numpy.jpeg">
 
-It's no secret that I love my some Python! Yes, even more than Perl, my first love from my graduate school days. 
+It's no secret that I love me some Python! Yes, even more than Perl, my first love from my graduate school days. 
 <br><br>
 I've always found NumPy to be great for manipulating, analyzing, or transforming arrays containing large numerical data sets. It is both fast and efficient and it comes with a tonne of great functions.
 <!--more-->
