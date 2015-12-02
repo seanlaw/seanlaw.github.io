@@ -91,7 +91,7 @@ ul.posts ol, ul.posts ul{padding:0;margin:20px;}
 ul ul,ul ol,ol ol,ol ul{margin-bottom:0;}
 ul{list-style:disc;}
 ol{list-style:decimal;}
-li{line-height:18px;}
+li{line-height:18px;margin-left:20px;}
 ul.unstyled,ol.unstyled{margin-left:0;list-style:none;}
 dl{margin-bottom:18px;}
 dt,dd{line-height:18px;}
