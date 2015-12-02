@@ -3,9 +3,7 @@ layout: post
 title: Python 2 Unicode Problem
 ---
 
-<!--
-<img class="img-left" align="left" src="{{ site.url }}/images/">
--->
+<img class="img-left" align="left" src="{{ site.url }}/images/unicode.png">
 
 The following Python error is one of the most annoying one's I've ever encountered:
 <br><br>
@@ -17,6 +15,7 @@ UnicodeEncodeError: 'ascii' codec can't encode character u'\u2019' in position 0
 {% endhighlight %}
 <br>
 Essentially, you can't write unicode characters as string unless you've converted the text to a string first before printing it. A detailed explanation can be found in Kumar McMillan's wonderful talk titled <a href="http://farmdev.com/talks/unicode/">'Unicode in Python, Completely Demystified'</a>. To summarize, McMillan offers three useful yet simple rules:
+<!--more-->
 <br><br>
 
 1. Decode early (after reading from a file)
