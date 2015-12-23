@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Title
+title: Convert a Pandas DataFrame to Numeric
 ---
 
 <!--
