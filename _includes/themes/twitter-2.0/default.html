@@ -24,6 +24,8 @@
     <link href="{{ ASSET_PATH }}/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
 
+    <link href="{{ HOME_PATH }}/feed.xml" rel="alternate" type="application/atom+xml">
+
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -52,7 +54,7 @@
           <a class="social-icon" href="http://www.twitter.com/{{ site.author.twitter }}"><i class="fa fa-twitter"></i></a>
           {% endif %}
           {% if site.author.github %}
-          <a class="social-icon" href="http://www.github.com/{{ site.author.github }}"><i class="fa fa-github"></i></a>
+          <a class="social-icon" href="{{ site.url }}/{{ site.author.github }}"><i class="fa fa-github"></i></a>
           {% endif %}
           {% if site.author.linkedin %}
           <a class="social-icon" href="http://www.linkedin.com/in/{{ site.author.linkedin }}"><i class="fa fa-linkedin"></i></a>
@@ -63,6 +65,7 @@
           {% if site.author.email %}
           <a class="social-icon" href="mailto:{{ site.author.email }}"><i class="fa fa-envelope"></i></a>
           {% endif %}
+          <a class="social-icon" href="{{ site.url }}/feed.xml"><i class="fa fa-rss"></i></a>
           <div class="nav-collapse">
             <ul class="nav">
               {% assign pages_list = site.pages %}

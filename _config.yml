@@ -13,14 +13,18 @@ gems:
 # so be sure to set them if your theme uses them.
 #
 title : Sean Law
-tagline: data science
+tagline : data science
 author :
   name : Sean Law
   email : seanmylaw@gmail.com
   github : seanlaw
-  twitter : 
+  twitter : seanmylaw 
   linkedin : seanlawphd
   googlescholar : mZppi58AAAAJ
+
+name : Sean Law's Blog
+description : Adventures in Data Sciencing
+url : http://seanlaw.github.com
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
