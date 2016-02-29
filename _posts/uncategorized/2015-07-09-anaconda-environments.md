@@ -16,7 +16,7 @@ To set up a <b>new</b> environment with Python 3.4:
 conda create -n py34 python=3.4 anaconda
 {% endhighlight %}
 <br><br>
-Here, "py34" is a reference tag for later and "python=3.4 anaconda" are package specifications, which, according to the documentation, is the job of the SAT solver inside conda to find a consistent set of packages wich satisfies these requirements. The above code will download all the new interpreter and all of the necessary dependencies to a separate directory.
+Here, "py34" is a reference tag for later and "python=3.4 anaconda" are package specifications, which, according to the documentation, is the job of the SAT solver inside conda to find a consistent set of packages which satisfies these requirements. The above code will download all the new interpreter and all of the necessary dependencies to a separate directory.
 <br><br>
 To use ("activate") the newly created environment:
 <br><br>
