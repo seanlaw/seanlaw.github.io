@@ -7,6 +7,8 @@
     {{ content }}
     <hr style="clear:both;">
     <div style="display:inline;float:left;">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="seanmylaw" data-size="large">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       <h4>Published</h4>
       <p class="greydate">{{ page.date | date: "%b %-d, %Y" }}</p>
       {% unless page.tags == empty %}
@@ -43,8 +45,8 @@
           </ul>
         {% endif %}
       {% endfor %}
-      <ul>
       {% if page.previous %}
+      <ul>
         <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
       {% else %}
         <li class="prev disabled"><a>&larr; Previous</a></li>
