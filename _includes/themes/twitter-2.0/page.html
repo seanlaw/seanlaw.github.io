@@ -1,5 +1,9 @@
 <div class="page-header">
-  <h1>{{ page.title }} <small>{{page.tagline}}</small></h1>
+  <h1>{{ page.title }} <small>{{page.tagline}}</small>
+    {% if page.title == 'Blog' %}
+    &nbsp;<a class="social-icon" href="{{ site.url }}/feed.xml"><i class="fa fa-rss fa-2x"></i></a>
+    {% endif %}
+  </h1>
 </div>
 
 <div class="row">

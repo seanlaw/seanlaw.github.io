@@ -29,16 +29,16 @@
               {% if post.url == page.url %}
                 {% assign last_inx = forloop.index0 | minus:1 %} 
                 {% if forloop.first == false %}
-                  <li class="prev"><a href="{{ BASE_PATH }}{{ posts[last_inx].url }}" title="{{ posts[last_inx].title }}">&larr; Previous</a></li>
+                  <li class="prev"><a href="{{ BASE_PATH }}{{ posts[last_inx].url }}" title="{{ posts[last_inx].title }}">Older</a></li>
                 {% else %}
-                  <li class="prev disabled"><a>&larr; Previous</a></li>
+                  <li class="prev disabled"><a>Older</a></li>
                 {% endif %}
                 <li><a href="{{ BASE_PATH }}{{ site.JB.pyesl_path }}">PyESL</a></li>
                 {% if forloop.last == false %}
                   {% assign next_inx = forloop.index0 | plus:1 %}
-                  <li class="next"><a href="{{ BASE_PATH }}{{ posts[next_inx].url }}" title="{{ posts[next_inx].title }}">Next &rarr;</a></li>
+                  <li class="next"><a href="{{ BASE_PATH }}{{ posts[next_inx].url }}" title="{{ posts[next_inx].title }}">Newer</a></li>
                 {% else %}
-                  <li class="next disabled"><a>Next &rarr;</a>
+                  <li class="next disabled"><a>Newer</a>
                 {% endif %}
               {% endif %}
             {% endfor %}
@@ -47,15 +47,15 @@
       {% endfor %}
       {% if page.previous %}
       <ul>
-        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
+        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">Older</a></li>
       {% else %}
-        <li class="prev disabled"><a>&larr; Previous</a></li>
+        <li class="prev disabled"><a>Older</a></li>
       {% endif %}
         <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Blog</a></li>
       {% if page.next %}
-        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Newer</a></li>
       {% else %}
-        <li class="next disabled"><a>Next &rarr;</a>
+        <li class="next disabled"><a>Newer</a>
       {% endif %}
       </ul>
     </div>
