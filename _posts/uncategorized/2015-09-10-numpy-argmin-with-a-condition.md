@@ -38,7 +38,7 @@ This will run through each row (`axis=1`)and return the index of the column with
 array([0, 0, 0, 2, 0, 0])
 {% endhighlight %}
 <br><br>
-Now, here's where things can get a little tricky. What happens if I want to find the row with the smallest first column value but whose third column value is greater than 1.25?
+Now, here's where things can get a little tricky. What happens if I want to find the row with the smallest first column value but whose third column value is greater than 1.25 (the answer is the third row)?
 <br><br>
 {% highlight python%}
 mask = (a[:, 2] > 1.25)
@@ -47,7 +47,7 @@ parent_idx = np.arange(a.shape[0])[mask][subset_idx]
 print("The row is {} (Note that it starts from zero)".format(parent_idx))
 {% endhighlight %}
 <br><br>
-Here, the `mask` contains a boolean mask for all values in the third column. Then, `np.argmin(a[mask][:, 0])` applies that mask to the values in the first column and returns the index for the smallest value. However, the index corresponds to the subset of array `a` rather than to the indices of `a` itself. Luckily, line 4 remedies this by allowing us to recover the parent index (`parent_idx`) of array `a` and the rest is history!
+Here, the `mask` contains a boolean mask for all values in the third column. Then, `np.argmin(a[mask][:, 0])` applies that mask to the values in the first column and returns the index for the smallest value. However, the index corresponds to the subset of array `a` rather than to the indices of `a` itself. Luckily, line 3 remedies this by allowing us to recover the parent index (`parent_idx`) of array `a` and the rest is history!
 <br><br>
 This precise problem has come up so regularly in my NumPy use that it was worth sharing as I'm sure others have come across this exact problem. Enjoy!
 
