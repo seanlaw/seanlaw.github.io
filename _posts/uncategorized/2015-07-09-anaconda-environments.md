@@ -34,7 +34,7 @@ Python 3.4.3 |Anaconda 2.3.0 (x86_64)| (default, Mar  6 2015, 12:07:41)
 And to stop using (deactivate) the environment:
 <br><br>
 {% highlight python %}
-source deactivate py34
+source deactivate  # or, in older versions of envs use `source deactivate py34`
 {% endhighlight %}
 <br><br>
 It's that easy! When you call Python now, it should revert back to your root environment.
