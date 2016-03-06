@@ -43,3 +43,11 @@ It's that easy! When you call Python now, it should revert back to your root env
 bash-3.2$ python
 Python 2.7.10 |Anaconda 2.2.0 (x86_64)| (default, May 28 2015, 17:04:42) 
 {% endhighlight %}
+<br><br>
+Finally, to check what environments you have installed:
+<br><br>
+{% highlight python %}
+conda env list
+{% endhighlight %}
+<br><br>
+For more details, find the full set of features in the [conda docs](http://conda.pydata.org/docs/using/envs.html).
