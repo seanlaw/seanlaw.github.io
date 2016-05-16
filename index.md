@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Sean Law
+title: Sean Law, PhD
 tagline: Data Scientist
 header: About
 ---
