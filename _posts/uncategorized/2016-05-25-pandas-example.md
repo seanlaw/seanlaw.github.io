@@ -10,29 +10,28 @@ import pandas as pd
 import numpy as np
 import datetime
 {% endhighlight %}
- 
+<br><br>
+
 # Purpose 
- 
+<br><br>
 The indexing capabilities that come with Pandas are incredibly useful. However,
 I find myself forgetting the concepts beyond the basics when I haven't touched
 Pandas in a while. This tutorial serves as my own personal reminder but I hope
 others will find it helpful as well.
-
+<br><br>
 To motivate this, we we'll explore a baseball dataset and plot batting averages
 for some of the greatest players of all time. 
- 
-# Load Some Data 
-  
+<br><br>
+<!--more-->
 
+# Load Some Data 
+<br><br>
 {% highlight python %}
 df = pd.read_csv('Batting.csv')  # Download data from http://seanlahman.com/files/database/lahman-csv_2014-02-14.zip
 df['yearID'] = pd.to_datetime(df['yearID'], format='%Y', exact=True)
 df.head()
 {% endhighlight %}
-
-
-
-
+<br><br>
 <div>
 <table border="1" class="dataframe">
   <thead>
@@ -186,19 +185,14 @@ df.head()
 </table>
 <p>5 rows × 24 columns</p>
 </div>
+<br><br> 
 
-
- 
 # Basic Indexing 
-  
-
+<br><br>
 {% highlight python %}
 df[df['playerID'] == 'mantlmi01']
 {% endhighlight %}
-
-
-
-
+<br><br>
 <div>
 <table border="1" class="dataframe">
   <thead>
@@ -664,14 +658,13 @@ df[df['playerID'] == 'mantlmi01']
 </table>
 <p>18 rows × 24 columns</p>
 </div>
+<br><br>
 
-
- 
 # Applying Function to a Groupby Object (Aggregating Multiple Columns) 
- 
-### Define a Function 
-  
+<br><br>
 
+### Define a Function 
+<br><br>
 {% highlight python %}
 def get_batting_avg(group):
     """
@@ -683,45 +676,35 @@ def get_batting_avg(group):
     
     return result
 {% endhighlight %}
- 
-### Groupby Year and Player 
-  
+<br><br>
 
+### Groupby Year and Player 
+<br><br>
 {% highlight python %}
 grouped = df.groupby(['yearID', 'playerID'])
 {% endhighlight %}
- 
-### Get Annual Batting Averages for Each Player 
-  
+<br><br> 
 
+### Get Annual Batting Averages for Each Player 
+<br><br>
 {% highlight python %}
 batting_avg = grouped.apply(get_batting_avg)
 {% endhighlight %}
-  
-
+<br><br>
 {% highlight python %}
 batting_avg.head()
 {% endhighlight %}
+<br><br>
 
-
-
-  
-
-
- 
 ### Get Annual Batting Averages for Mickey Mantle, Roger Maris, and Babe Ruth 
-  
-
+<br><br>
 {% highlight python %}
 player = 'mantlmi01'
 idx = pd.IndexSlice
 mantle_batting_avg = pd.DataFrame(batting_avg.loc[idx[:], idx[player]], columns=['avg'])
 mantle_batting_avg.head()
 {% endhighlight %}
-
-
-
-
+<br><br>
 <div>
 <table border="1" class="dataframe">
   <thead>
@@ -758,30 +741,24 @@ mantle_batting_avg.head()
   </tbody>
 </table>
 </div>
-
-
-  
-
+<br><br>
 {% highlight python %}
 player = 'ruthba01'
 ruth_batting_avg = pd.DataFrame(batting_avg.loc[idx[:], idx[player]], columns=['avg'])
 player = 'marisro01'
 maris_batting_avg = pd.DataFrame(batting_avg.loc[idx[:], idx[player]], columns=['avg'])
 {% endhighlight %}
- 
-### Get Annual Batting Averages for Mickey Mantle, Roger Maris, and Babe Ruth 
-  
+<br><br>
 
+### Get Annual Batting Averages for Mickey Mantle, Roger Maris, and Babe Ruth 
+<br><br>
 {% highlight python %}
 players = ['mantlmi01', 'ruthba01', 'marisro01']
 idx = pd.IndexSlice
 legends_batting_avg = pd.DataFrame(batting_avg.loc[idx[:], idx[players]], columns=['avg'])
 legends_batting_avg
 {% endhighlight %}
-
-
-
-
+<br><br>
 <div>
 <table border="1" class="dataframe">
   <thead>
@@ -1048,20 +1025,15 @@ legends_batting_avg
   </tbody>
 </table>
 </div>
+<br><br> 
 
-
- 
 # Get Aggregated Annual Batting Averages 
-  
-
+<br><br>
 {% highlight python %}
 all_batting_avg = batting_avg.groupby(level=['yearID']).agg({'avg': np.mean})
 all_batting_avg.head()
 {% endhighlight %}
-
-
-
-
+<br><br>
 <div>
 <table border="1" class="dataframe">
   <thead>
@@ -1098,12 +1070,10 @@ all_batting_avg.head()
   </tbody>
 </table>
 </div>
+<br><br>
 
-
- 
 # Plot Batting Averages Over Time 
-  
-
+<br><br>
 {% highlight python %}
 def get_timestamp(time):
     """
@@ -1112,9 +1082,9 @@ def get_timestamp(time):
     delta = (pd.to_datetime(time).to_datetime() - datetime.datetime(1970, 1, 1))
     return 1000*delta.total_seconds()
 {% endhighlight %}
-  
-
+<br><br>
 {% highlight python %}
+
 # Get xlim, ylim
 minx = min(all_batting_avg.index.values.min(), ruth_batting_avg.index.values.min())
 maxx = max(all_batting_avg.index.values.max(), ruth_batting_avg.index.values.max())
@@ -1143,6 +1113,7 @@ p.text(get_timestamp(ruth_batting_avg.index.values.min()), ruth_batting_avg.valu
 
 show(p)
 {% endhighlight %}
-
-
+<br><br>
 <img align="center" src="{{ site.url }}/images/batting_averages.png">
+
+# Clearly, the legends were in a league of their own!
