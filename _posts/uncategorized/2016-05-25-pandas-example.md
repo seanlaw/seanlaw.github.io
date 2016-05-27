@@ -5,14 +5,7 @@ title: "Pandas Example"
 
 <img class="img-left" align="left" src="{{ site.url }}/images/batting_averages.png">
 
-{% highlight python %}
-import pandas as pd
-import numpy as np
-import datetime
-{% endhighlight %}
-<br><br>
-
-# Purpose 
+## Purpose 
 <br><br>
 The indexing capabilities that come with Pandas are incredibly useful. However,
 I find myself forgetting the concepts beyond the basics when I haven't touched
@@ -24,7 +17,25 @@ for some of the greatest players of all time.
 <br><br>
 <!--more-->
 
-# Load Some Data 
+## Getting Started
+<br><br>
+Let's import the packages that we'll need to do the analysis and generate some plots
+<br><br>
+{% highlight python %}
+import pandas as pd
+import numpy as np
+import datetime
+from bokeh.plotting import figure, show
+from bokeh.models import Range1d
+from bokeh.models import PrintfTickFormatter, DatetimeTickFormatter
+from bokeh.io import output_notebook
+output_notebook()
+{% endhighlight %}
+<br><br>
+
+## Load Some Data 
+<br><br>
+First, we'll download historical data from Sean Lahman's baseball database and then we make sure that the `yearID` is recognized as a datetime object.
 <br><br>
 {% highlight python %}
 df = pd.read_csv('Batting.csv')  # Download data from http://seanlahman.com/files/database/lahman-csv_2014-02-14.zip
@@ -187,7 +198,9 @@ df.head()
 </div>
 <br><br> 
 
-# Basic Indexing 
+## Basic Indexing
+<br><br>
+With Pandas, we can perform some basic indexing by choosing all rows where the `playerID` is `mantlmi01` (Mickey Mantle). 
 <br><br>
 {% highlight python %}
 df[df['playerID'] == 'mantlmi01']
@@ -659,11 +672,16 @@ df[df['playerID'] == 'mantlmi01']
 <p>18 rows × 24 columns</p>
 </div>
 <br><br>
-
-# Applying Function to a Groupby Object (Aggregating Multiple Columns) 
+Note that `df['playerID'] == 'mantlmi01'` returns a boolean list (rows with `playerID` matching `mantlmi01` will return true and all others will return false) that can then be used to mask the original dataframe.
 <br><br>
 
-### Define a Function 
+## Applying Function to a Groupby Object (Aggregating Multiple Columns) 
+<br><br>
+
+### Define a Function
+<br><br>
+In order to calculate the batting average, for a given player, we need to divide the number of hits (`H`) by the number of at bats (`AB`). 
+As an exercise, let's start by defining a simple function that can be used after we've performed a groupby operation.
 <br><br>
 {% highlight python %}
 def get_batting_avg(group):
@@ -671,7 +689,6 @@ def get_batting_avg(group):
     """
     result = 0
     if group['AB'].sum() > 0:
-        #result = 100.0*group['H'].sum()/group['AB'].sum()
         result = 100.0*(group['H']/group['AB']).mean()
     
     return result
@@ -680,6 +697,8 @@ def get_batting_avg(group):
 
 ### Groupby Year and Player 
 <br><br>
+Next, we can group the data by `yearID` and `playerID`
+<br><br>
 {% highlight python %}
 grouped = df.groupby(['yearID', 'playerID'])
 {% endhighlight %}
@@ -687,16 +706,62 @@ grouped = df.groupby(['yearID', 'playerID'])
 
 ### Get Annual Batting Averages for Each Player 
 <br><br>
+Then, we apply the `get_batting_avg` to each group.
+<br><br>
 {% highlight python %}
 batting_avg = grouped.apply(get_batting_avg)
 {% endhighlight %}
+<br><br>
+The results look like this (with the batting average in the last column)
 <br><br>
 {% highlight python %}
 batting_avg.head()
 {% endhighlight %}
 <br><br>
+<div>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>yearID</th>
+        <th>playerID</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>1871-01-01 00:00:00</th>
+        <td>abercda01</td>
+        <td>0.000000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>addybo01</td>
+        <td>27.118644</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>allisar01</td>
+        <td>29.197080</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>allisdo01</td>
+        <td>33.082707</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>ansonca01</td>
+        <td>32.500000</td>
+      </tr>      
+    </tbody>
+  </table>
+</div>
+<br><br>
 
 ### Get Annual Batting Averages for Mickey Mantle, Roger Maris, and Babe Ruth 
+
+<br><br>
+To get batting averages for specific players, we'll have to use Pandas' `.loc` function to select for a given player.
 <br><br>
 {% highlight python %}
 player = 'mantlmi01'
@@ -750,7 +815,10 @@ maris_batting_avg = pd.DataFrame(batting_avg.loc[idx[:], idx[player]], columns=[
 {% endhighlight %}
 <br><br>
 
-### Get Annual Batting Averages for Mickey Mantle, Roger Maris, and Babe Ruth 
+
+### Get Annual Batting Averages for Mickey Mantle, Roger Maris, and Babe Ruth
+<br><br>
+Alternatively, we can get batting averages for a set of players rather than one-by-one
 <br><br>
 {% highlight python %}
 players = ['mantlmi01', 'ruthba01', 'marisro01']
@@ -1027,7 +1095,10 @@ legends_batting_avg
 </div>
 <br><br> 
 
-# Get Aggregated Annual Batting Averages 
+## Get Aggregated Annual Batting Averages 
+<br><br>
+Finally, we can get annual batting averages for the entire league by taking the mean (`np.mean`) across batting averages for each year. 
+In other words, we choose a single year and calculate the average batting average across all players for that year and then repeat this for each year.
 <br><br>
 {% highlight python %}
 all_batting_avg = batting_avg.groupby(level=['yearID']).agg({'avg': np.mean})
@@ -1074,9 +1145,12 @@ all_batting_avg.head()
 
 # Plot Batting Averages Over Time 
 <br><br>
+Now, we will plot the performance of the legendary players with respect to the league average using Bokeh. 
+<br><br>
 {% highlight python %}
 def get_timestamp(time):
     """
+    Convert datetime to epoch time for Bokeh
     """
     
     delta = (pd.to_datetime(time).to_datetime() - datetime.datetime(1970, 1, 1))
@@ -1106,6 +1180,10 @@ p.circle(mantle_batting_avg.index.values, mantle_batting_avg.values.flatten(), s
 p.circle(maris_batting_avg.index.values, maris_batting_avg.values.flatten(), size=5, line_color='red', fill_color='red')
 p.circle(ruth_batting_avg.index.values, ruth_batting_avg.values.flatten(), size=5, line_color='black', fill_color='black')
 
+# Define Axes Format
+p.xaxis[0].formatter = DatetimeTickFormatter(formats=dict(years=["%Y"]))
+p.yaxis[0].formatter = PrintfTickFormatter(format="%0.0f %%")
+
 # Write text on plot
 p.text(get_timestamp(mantle_batting_avg.index.values.min()), mantle_batting_avg.values.max(), text=["Mickey Mantle"], text_color='blue')
 p.text(get_timestamp(maris_batting_avg.index.values.max()), maris_batting_avg.values.max(), text=["Roger Maris"], text_color='red')
@@ -1116,4 +1194,4 @@ show(p)
 <br><br>
 <img align="center" src="{{ site.url }}/images/batting_averages.png">
 
-# Clearly, the legends were in a league of their own!
+## Clearly, the legends were in a league of their own!
