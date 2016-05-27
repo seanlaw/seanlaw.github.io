@@ -5,8 +5,6 @@ title: "Pandas Example"
 
 <img class="img-left" align="left" src="{{ site.url }}/images/batting_averages.png">
 
-## Purpose 
-<br><br>
 The indexing capabilities that come with Pandas are incredibly useful. However,
 I find myself forgetting the concepts beyond the basics when I haven't touched
 Pandas in a while. This tutorial serves as my own personal reminder but I hope
