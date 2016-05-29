@@ -8,7 +8,7 @@ Before we start, let's import Pandas and generate a dataframe with some example
 email data 
 <br><br>
 
-## Import Pandas and Create Email DataFrame 
+## Import Pandas and Create an Email DataFrame 
 <br><br>
 {% highlight python %}
 import pandas as pd
@@ -89,6 +89,9 @@ are associated with each sender:
 <br><br>
 {% highlight python %}
 grouped.groups
+{% endhighlight %}
+{% highlight python %}
+{'Alice': [0, 1, 5], 'Bob': [2, 4], 'Carl': [3]}
 {% endhighlight %}
 <br><br>
 We usually follow a groupby call by aggregating data along the other columns.
