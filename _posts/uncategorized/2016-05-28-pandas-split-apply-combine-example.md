@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Pandas Split-Apply-Combine"
+title: "Pandas Split-Apply-Combine Example"
 --- 
 There are times when I want to use split-apply-combine to save the results of a
 groupby to a json file while preserving the resulting column values as a list.

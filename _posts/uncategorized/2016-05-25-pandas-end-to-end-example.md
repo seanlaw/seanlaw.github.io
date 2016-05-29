@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Pandas Example"
+title: "Pandas End-to-End Example"
 ---  
 
 <img class="img-left" align="left" src="{{ site.url }}/images/batting_averages.png">
