@@ -44,6 +44,11 @@ bash-3.2$ python
 Python 2.7.10 |Anaconda 2.2.0 (x86_64)| (default, May 28 2015, 17:04:42) 
 {% endhighlight %}
 <br><br>
+Obviously, you can remove or delete an environment at any time by doing:
+{% highlight python %}
+bash-3.2$ conda remove --name py34 --all
+{% endhighlight %}
+<br><br>
 Finally, to check what environments you have installed:
 <br><br>
 {% highlight python %}
