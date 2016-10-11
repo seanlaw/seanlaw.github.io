@@ -23,4 +23,10 @@ Optionally, you can also specify the package version like this:
 {% highlight python %}
 pip install --trusted-host pypi.python.org --index-url=http://pypi.python.org <package name>[=0.1.2]
 {% endhighlight %}
+<br><br>
+Better yet, you can permanently set the trusted-host by adding the following to the $HOME/.pip/pip.conf file:
+{% highlight python %}
+[global]
+trusted-host = pypi.python.org
+{% endhighlight %}
 
