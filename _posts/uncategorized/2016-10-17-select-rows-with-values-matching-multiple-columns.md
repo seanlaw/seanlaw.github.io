@@ -128,7 +128,7 @@ df_colors
 So, if we wanted to grab all rows from df_colors where the value in df_vals is
 inclusively between 2 and 6, then: 
 <br><br>
-
+<!--more-->
 {% highlight python %}
 query = '''
         SELECT a.* FROM df_colors a
