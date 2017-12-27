@@ -5,7 +5,7 @@ title: "I'm Melting! From Wide to Long Format and Quarterly Groupby"
 Recently, a colleague of mine asked me how one might go about taking a dataset
 that is in wide format and converting it into long format so that you could then
 perform some groupby operations by quarter.
-
+<br><br>
 Here's a quick example to illustrate one way to go about this using the Pandas
 melt function. 
 <br><br>
@@ -126,7 +126,7 @@ df
 The problem was to take this dataset and try to find the average number of
 Canadians eating poutine in each city and state for each quarter in the year
 2000.
-
+<br><br>
 First, we need to convert the original dataframe into long format and then make
 sure that the resulting months are understood to be a datetime column. 
 <br><br>
