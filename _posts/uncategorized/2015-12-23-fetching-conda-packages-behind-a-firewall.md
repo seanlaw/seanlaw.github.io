@@ -10,7 +10,6 @@ title: Fetching Conda Packages Behind a Firewall
 One of the most annoying things is not being able to update software if you're behind a network firewall that requires SSL verification. You can turn this off in Anaconda via
 <br><br>
 {% highlight python %}
-~~conda config --set ssl_verify false --system~~
 conda config --set ssl_verify no
 {% endhighlight %}
 <br><br>
