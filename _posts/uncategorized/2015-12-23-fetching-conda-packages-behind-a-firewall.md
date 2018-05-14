@@ -28,5 +28,7 @@ Better yet, you can permanently set the trusted-host by adding the following to 
 {% highlight python %}
 [global]
 trusted-host = pypi.python.org
+               pypi.org
+               files.pythonhosted.org
 {% endhighlight %}
 
