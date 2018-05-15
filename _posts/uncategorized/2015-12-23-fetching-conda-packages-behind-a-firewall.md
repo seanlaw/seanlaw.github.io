@@ -16,19 +16,18 @@ conda config --set ssl_verify no
 and for pip via
 <br><br>
 {% highlight python %}
-pip install --trusted-host pypi.python.org <package name>
+pip install --trusted-host pypi.python.org --trusted-host files.pythonhosted.org <package name>
 {% endhighlight %}
 <br><br>
 Optionally, you can also specify the package version like this:
 {% highlight python %}
-pip install --trusted-host pypi.python.org <package name>[=0.1.2]
+pip install --trusted-host pypi.python.org --trusted-host files.pythonhosted.org <package name>[=0.1.2]
 {% endhighlight %}
 <br><br>
 Better yet, you can permanently set the trusted-host by adding the following to the $HOME/.pip/pip.conf file:
 {% highlight python %}
 [global]
 trusted-host = pypi.python.org
-               pypi.org
                files.pythonhosted.org
 {% endhighlight %}
 
