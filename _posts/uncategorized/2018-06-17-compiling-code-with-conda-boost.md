@@ -7,7 +7,7 @@ title: Compiling Facebook's StarSpace with Conda Boost
 <img class="img-left" align="left" src="{{ site.url }}/images/">
 -->
 
-Recently, I was playing around with Facebook's i<a href="https://github.com/facebookresearch/StarSpace">StarSpace</a>, a general-purpose neural model for efficient learning of entity embeddings for solving a wide variety of problems. According to the installation instructions, you need a C++11 compiler and the Boost library. I already had GCC installed and Boost was only a quick conda command away:
+Recently, I was playing around with Facebook's <a href="https://github.com/facebookresearch/StarSpace">StarSpace</a>, a general-purpose neural model for efficient learning of entity embeddings for solving a wide variety of problems. According to the installation instructions, you need a C++11 compiler and the Boost library. I already had GCC installed and Boost was only a quick conda command away:
 <br><br>
 {% highlight python %}
 conda install boost
@@ -17,7 +17,7 @@ The StarSpace Makefile is hardcoded to look for the Boost library in /usr/local/
 <br><br>
 {% highlight python %}
 #BOOST_DIR = /usr/local/bin/boost_1_63_0/
-BOOST_DIR = /path/to/miniconda3/include/
+BOOST_DIR = /path/to/anaconda/include/
 {% endhighlight %}
 <br><br>
-Executed `make` on the command line and everything compiled nicely! 
+Executed `make` on the command line and everything compiled nicely! Yay! 
