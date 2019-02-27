@@ -17,9 +17,8 @@ x = csr_matrix(np.array([[1, 0, 2, 0, 3],
                          [0, 4, 0, 5, 0]]))
 print(x)
 {% endhighlight %}
-<br><br>
+<br>
 {% highlight python %}
-
 <2x5 sparse matrix of type '<class 'numpy.int64'>'
     with 5 stored elements in Compressed Sparse Row format>
 {% endhighlight %}
@@ -38,7 +37,8 @@ This works and is fine for small matrices. However, you'll likely encounter a wa
 {% endhighlight %}
 <br><br>
 The problem here is that for large sparse matrices, the majority of the matrix is full of zeros and so the `<` comparison becomes highly inefficient. Instead, you really only want to perform your comparison only with the nonzero elements of the matrix. However, this takes a little more work and a few more lines of code to accomplish the same thing. Additionally, we want to avoid converting our sparse matrices into costly dense arrays.
-
+<!--more-->
+<br>
 First, we'll create a nonzero mask that keeps track of all of the nonzero elements that are less than 3 and returns the indices relative to the set of nonzero indices (and not the sparse or dense arrays).
 <br><br>
 {% highlight python %}
