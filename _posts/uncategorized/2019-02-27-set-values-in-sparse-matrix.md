@@ -67,4 +67,10 @@ And our array will end up as we had expected
  [0 4 0 5 0]]
 {% endhighlight %}
 <br><br>
+Of course, for a sufficiently large sparse matrix, we'd want to remove those zero elements
+<br><br>
+{% highlight python %}
+x.eliminate_zeros()  # This happens inplace
+{% endhighlight %}
+<br><br>
 I hope this helps you when you are looking to manipulate your sparse matrix and leave a comment below!
