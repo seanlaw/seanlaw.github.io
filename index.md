@@ -11,7 +11,9 @@ header: About
 <br>
 I am an <a href="https://www.linkedin.com/in/seanlawphd/">applied research</a> and <a href="https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century/">data scientist</a> currently working with a multi-talented Exploration Lab team (formerly, Advanced Technology) and serve as an advisor on an enterprise A.I. Council at TD Ameritrade. I have experience producing <a href="http://pubs.acs.org/doi/abs/10.1021/jz501811k">cutting edge methodologies</a>, building <a href="http://onlinelibrary.wiley.com/doi/10.1002/jcc.23683/abstract">high-performance predictive models</a>, and developing rapid prototypes. 
 <br><br>
-Additionally, I co-organize the monthly <a href="https://www.meetup.com/PyData-Ann-Arbor/">PyData Ann Arbor data science meetup</a> and I am also the creator and core maintainer of <a href="https://github.com/TDAmeritrade/stumpy">stumpy</a>, a powerful and scalable open source Python library that can be used for a variety of time series data mining tasks.
+Additionally, I co-organize the monthly <a href="https://www.meetup.com/PyData-Ann-Arbor/">PyData Ann Arbor data science meetup</a> and I am also the creator and core maintainer of <a href="https://github.com/TDAmeritrade/stumpy">STUMPY</a>, a powerful and scalable open source Python library that can be used for a variety of time series data mining tasks.
+<br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WvaBPSeA_JA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br><br>
 For data munging, analysis, visualization, and deep dives, I use the <a href="http://www.pydata.org">PyData stack</a>. However, various command-line tools can be found in my daily arsenal. <a href="http://git-scm.com">Git</a> is my distributed version control system of choice.
 <br><br>
