@@ -1,0 +1,1 @@
+ipython nbconvert --config jekyll.py <file>.ipynb
