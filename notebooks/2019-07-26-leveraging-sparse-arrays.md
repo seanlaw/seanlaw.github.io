@@ -54,7 +54,7 @@ that we really mean a "2D array" but, unlike a matrix, the array can be
 generalized to higher dimensions. 
 <br><br>
 ## So What?
-<br><br>
+<br>
 If you already have your data in hand then, most of the time, converting that
 numpy array or pandas dataframe into a sparse matrix is pretty trivial. However,
 where things get really tricky is when your data is stored within one giant
@@ -83,7 +83,7 @@ things can go wrong! Below, we'll show you one relatively clean approach that
 will help to keep everything in order. 
 <br><br>
 ## Getting Started 
-<br><br>  
+<br>  
 {% highlight python %}
 import sparse
 import pandas as pd
@@ -91,7 +91,7 @@ import numpy as np
 {% endhighlight %}
 <br><br>
 ## Large Wide Data
-<br><br>
+<br>
 Let's pretend that the dataframe below represents our large data which is stored
 in some remote database or chunked up. Remember, since the data is "big", the
 database only allows you to fetch, say, five columns of data at a time and,
@@ -204,7 +204,7 @@ all_df
 </div>
 <br><br>
 ## Mimic a Chunked Data Source
-<br><br>
+<br>
 Here, we use a Python generator to pretend like we are accessing our fictitious
 database one subset of columns at a time. But, in the real world, this will be
 replaced by your database connection of choice. 
@@ -240,12 +240,12 @@ def get_df_chunks(df):
         
         yield long_df
 {% endhighlight %}
-<br><br>  
+<br>  
 {% highlight python %}
 for long_df in get_df_chunks(all_df):
     print(long_df, end="\n\n")
 {% endhighlight %}
-<br><br>
+<br>
 {% highlight python %}
        user_id    feature  value
     0        x  feature_a      1
@@ -274,7 +274,7 @@ for long_df in get_df_chunks(all_df):
 Additionally, we'll want to convert the `user_id` and `feature` columns to a
 categorical dtype and, to further reduce the memory footprint of our sparse
 matrix, we'll force the `value` to be `np.float32`: 
-<br><br>
+<br>
 {% highlight python %}
 for long_df in get_df_chunks(all_df):
     long_df[['user_id', 'feature']] = long_df[['user_id', 'feature']].astype('category')
@@ -282,11 +282,11 @@ for long_df in get_df_chunks(all_df):
     
     # Convert to sparse
 {% endhighlight %}
-<br><br> 
+<br>
 ## Breaking Things Down
-<br><br>
+<br>
 ### Keeping Track of the Data Chunks
-<br><br>
+<br>
 Since each `long_df` chunk may contain a different/overlapping set of `user_id`
 and `feature`, we'll need to keep track of them in the order in which they are
 observed so that we can cross reference our index-less sparse matrix with a nice
@@ -309,16 +309,16 @@ initialize a couple of Pandas series for better bookkeeping:
 all_user_ids = pd.Series([], dtype='category')
 all_features = pd.Series([], dtype='category')
 {% endhighlight %}
-<br><br>
+<br>
 And we'll define a helper function to help us determine if we've already "seen"
 a certain category type before. 
-<br><br>  
+<br>
 {% highlight python %}
 def return_new_categories(add_cat, old_cat):
     old_cat_set = set(old_cat)  # this reduces the lookup time from O(n) to O(1)
     return [cat for cat in add_cat if cat not in old_cat_set]
 {% endhighlight %}
-<br><br>
+<br>
 So, as each chunk comes in, we'll update the observed `all_user_ids` and
 `all_features` categories on the fly: 
 <br><br>
@@ -341,19 +341,19 @@ for i, long_df in enumerate(get_df_chunks(all_df)):
 {% endhighlight %}
 <br><br>
 ### Creating a Sparse Array Using the PyData Sparse Package
-<br><br>
+<br>
 [Installing the PyData Sparse
 package](https://sparse.pydata.org/en/latest/install.html) should be as
 straigtforward as: 
-<br><br>
+<br>
 {% highlight python %}
 pip install sparse
 {% endhighlight %}
-<br><br>
+<br>
 According to their
 [documentation](https://sparse.pydata.org/en/latest/construct.html), you can
 construct a sparse nd-array (2D in our case) by doing: 
-<br><br>
+<br>
 {% highlight python %}
 import sparse
 
@@ -369,9 +369,9 @@ s.todense()
 #       [ 0,  0,  0, 40,  0],
 #       [ 0,  0,  0,  0, 50]]) 
 {% endhighlight %}
-<br><br>
+<br>
 In our case, we can do something similar with our incoming long dataframe: 
-<br><br>
+<br>
 {% highlight python %}
 nrow = all_df.shape[0]  # This is the number of rows of user_id in the original dataframe
 ncol = long_df['feature'].cat.categories.shape[0]  # This is the number of unique features in this long_df
@@ -381,18 +381,18 @@ data = long_df['value']
 
 some_sparse_array = sparse.COO(coords, data, shape=(nrow, ncol)).astype(np.float32)
 {% endhighlight %}
-<br><br> 
-And, voila, we have sparse 2D array! And as we process each incoming new
+<br><
+And, voila, we have a sparse 2D array! And as we process each incoming new
 `long_df`, we can add the new sparse array to our existing sparse array via the
 `concatenate` [function](https://sparse.pydata.org/en/latest/generated/sparse.co
 ncatenate.html#sparse.concatenate): 
-<br><br>
+<br>
 {% highlight python %}
 existing_sparse_array = sparse.concatenate([existing_sparse_array, new_sparse_array], axis=1) 
 {% endhighlight %}
-<br><br>
+<br>
 ## Putting Things Altogether
-<br><br>
+<br>
 This is the workhorse so please review it carefully. A lot of this stuff might
 seem obvious or trivial but there are actually a lot of "gotchas" and one needs
 to take care and be mindful of the pitfalls of their approach. The biggest thing
@@ -428,19 +428,26 @@ for i, long_df in enumerate(get_df_chunks(all_df)):
     else:
         existing_sparse_array = sparse.concatenate([existing_sparse_array, new_sparse_array], axis=1)
 {% endhighlight %}
-<br><br>
+<br>
 Indeed, our final `existing_sparse_array` is sparse and has the correct
 dimensions: 
-<br><br>
+<br>
 {% highlight python %}
 existing_sparse_array
+
+# <COO: shape=(4, 8), dtype=float32, nnz=17, fill_value=0.0>
 {% endhighlight %}
-<br><br> 
+<br>
 To confirm that our sparse array is the same as our original `all_df` dataframe,
 we can convert it back to dense form: 
 <br><br>  
 {% highlight python %}
 existing_sparse_array.todense()
+
+# array([[1., 2., 3., 6., 0., 0., 7., 0.],
+#        [2., 3., 0., 0., 0., 4., 8., 5.],
+#        [3., 0., 1., 0., 1., 2., 0., 9.],
+#        [0., 0., 0., 0., 3., 0., 1., 0.]], dtype=float32)
 {% endhighlight %}
 <br><br> 
 And we see that it is nearly identical to `all_df`:
@@ -542,41 +549,45 @@ this is by design since that column contains no useful information from which to
 learn from. If you recall, this was handled earlier by our fake database
 generator, `get_df_chunks`, when we removed all nonzero elements before
 returning `long_df`: 
-<br><br>
+<br>
 {% highlight python %}
 long_df = long_df[long_df['value'] != 0]  # Remove nonzero elements
 {% endhighlight %}
-<br><br>
+<br>
 We can also check to make sure that our stored `all_features` categories did not
 accidentally capture `feature_h` and that the order of the categories should be
 retained: 
-<br><br>
+<br>
 {% highlight python %}
 all_features.cat.categories
+
+# Index(['feature_a', 'feature_b', 'feature_c', 'feature_d', 'feature_e',
+#        'feature_f', 'feature_g', 'feature_i'],
+#       dtype='object')
 {% endhighlight %}
-<br><br>
+<br>
 Success! You can also access the ordered list of `all_user_ids` via: 
-<br><br>
+<br>
 {% highlight python %}
 all_user_ids.cat.categories
 {% endhighlight %}
-<br><br>
+<br>
 Or save the list to a CSV file: 
-<br><br>
+<br>
 {% highlight python %}
 all_user_ids.cat.categories.to_series().to_csv("all_user_ids.csv", header=False)
 {% endhighlight %}
-<br><br>
+<br>
 Finally, if you wanted to, say, build an scikit-learn or XGBoost model then all
 you need to do is hand this sparse COO matrix over to the XGBoost model builder
 in `Compressed Sparse Row` format just as if it were a dense `numpy` array: 
-<br><br>
+<br>
 {% highlight python %}
 clf.fit(existing_sparse_array.tocsr(), responses) 
 {% endhighlight %}
-<br><br>
+<br>
 ## Conclusion
-<br><br>
+<br>
 From our experience, and depending on your local hardware resources, we've been
 able to leverage this approach for data that contain around a million rows x a
 thousand features (or you can have many more rows if you decrease the number of
@@ -585,7 +596,7 @@ than this, then, depending on the type of model that you are trying to build,
 you may be able to use the scikit-learn's `partial_fit` (or sometimes called
 `warm_start`) function by breaking your data up into a smaller number of rows
 and feeding the chunks back in an iterative fashion.
-<br><br>
+<br>
 Hopefully, this approach will work for you as you venture down your data science
 journey! Let me know what you think in the comments below. 
 <br><br>
