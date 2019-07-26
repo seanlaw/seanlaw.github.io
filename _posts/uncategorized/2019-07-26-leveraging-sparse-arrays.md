@@ -596,7 +596,14 @@ than this, then, depending on the type of model that you are trying to build,
 you may be able to use the scikit-learn's `partial_fit` (or sometimes called
 `warm_start`) function by breaking your data up into a smaller number of rows
 and feeding the chunks back in an iterative fashion.
-<br>
+<br><br>
+Final word of warning. With this sparse array approach, you definitely do <b>not</b> want 
+to [normalize or standardize](https://stats.stackexchange.com/questions/10289/whats-the-difference-between-normalization-and-standardization)
+your data (aka feature scaling) as both options will typically increase the density 
+of your array and you'll be back to square one. Also, note that popular tree based 
+methods such as random forest and XGBoost do not require feature scaling as they 
+are both [insensitive to monotonic transformations](https://stats.stackexchange.com/questions/353462/what-are-the-implications-of-scaling-the-features-to-xgboost).
+<br><br>
 Hopefully, this approach will work for you as you venture down your data science
 journey! Let me know what you think in the comments below. 
 <br><br>
