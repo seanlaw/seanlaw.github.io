@@ -622,5 +622,4 @@ in his own right, [reminded us that](https://twitter.com/eprosenthal/status/1154
 scikit-learn's `DictVectorizer` is another great option for generating sparse feature matrices 
 if your data is small enough to fit into memory. Thanks, Ethan! We should note that, unlike 
 `DictVectorizer`, the approach presented in this blog can handle large datasets and would only 
-require a single passes over the data. Additionally, we provide a real working example of using 
-the PyData Sparse package.
+require a single passes over the chunked data. An additional goal of this blog post was to also provide a real working example of using the PyData Sparse package.
