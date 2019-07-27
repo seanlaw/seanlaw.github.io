@@ -29,6 +29,7 @@ need is:
 <br><br>
 1. The total length of the list
 2. The exact position of each `1` (the position of each `0` is implied)
+
 <br><br>
 In other words, since the majority of the list is full of zeros, we can start by
 assuming that the entire list is full of zeros with the exception of the
@@ -74,6 +75,7 @@ for chunk in db_cnxn.get(chunks):
     sparse_chunk = convert_chunk_to_sparse(chunk)
     sparse_matrix_list.append(sparse_chunk)
 {% endhighlight %}
+
 <br><br>
 At first glance, this seems pretty straightforward. You retrieve only one chunk
 at a time, process each chunk, convert that chunk into a sparse matrix, and
@@ -223,6 +225,7 @@ couple of issues:
 <br><br>
 1. The chunk itself is too big as it contains a lot of zeros
 2. SciPy expects the data to be a long format instead of a wide format
+
 <br><br>
 So, we should try to get the database to do as much of the heavy lifting as
 possible such as to pivot the wide tables into a long format and then to remove
@@ -299,6 +302,7 @@ to:
 3. Append the incoming (ordered) `user_id` list to the (ordered) categories from
 the existing `all_user_ids` list and remove redundant categories
 4. Repeat steps 2-3 for all other chunks
+
 <br><br>
 This is also done for `feature` as well. Now, you might be tempted use Python's
 built-in `set` operations to help identify a non-redundant list of `user_id` and
@@ -381,7 +385,7 @@ data = long_df['value']
 
 some_sparse_array = sparse.COO(coords, data, shape=(nrow, ncol)).astype(np.float32)
 {% endhighlight %}
-<br><
+<br>
 And, voila, we have a sparse 2D array! And as we process each incoming new
 `long_df`, we can add the new sparse array to our existing sparse array via the
 `concatenate` [function](https://sparse.pydata.org/en/latest/generated/sparse.co
@@ -595,7 +599,7 @@ features by an order of magnitude). Additionally, if your data is even bigger
 than this, then, depending on the type of model that you are trying to build,
 you may be able to use the scikit-learn's `partial_fit` (or sometimes called
 `warm_start`) function by breaking your data up into a smaller number of rows
-and feeding the chunks back in an iterative fashion.
+and feeding the chunks back in an iterative fashion. 
 <br><br>
 Final word of warning. With this sparse array approach, you definitely do <b>not</b> want 
 to [normalize or standardize](https://stats.stackexchange.com/questions/10289/whats-the-difference-between-normalization-and-standardization)
@@ -603,7 +607,20 @@ your data (aka feature scaling) as both options will typically increase the dens
 of your array and you'll be back to square one. Also, note that popular tree based 
 methods such as random forest and XGBoost do not require feature scaling as they 
 are both [insensitive to monotonic transformations](https://stats.stackexchange.com/questions/353462/what-are-the-implications-of-scaling-the-features-to-xgboost).
+Additionally, in this post, we've made one key assumption that our data is already
+cleaned (in our database) and that all of the subset of tables that are derived
+from it are non-overlapping and non-redundant. Having said that, the code above
+can serve as an excellent starting point for you to build from.
 <br><br>
 Hopefully, this approach will work for you as you venture down your data science
 journey! Let me know what you think in the comments below. 
 <br><br>
+## Update
+<br>
+Ethan Rosenthal, a wonderful [physicist-turned-data scientist](https://www.ethanrosenthal.com/) 
+in his own right, [reminded us that](https://twitter.com/eprosenthal/status/1154829863712370688) 
+scikit-learn's `DictVectorizer` is another great option for generating sparse feature matrices 
+if your data is small enough to fit into memory. Thanks, Ethan! We should note that, unlike 
+`DictVectorizer`, the approach presented in this blog can handle large datasets and would only 
+require a single passes over the data. Additionally, we provide a real working example of using 
+the PyData Sparse package.
