@@ -3,6 +3,8 @@ layout: post
 title: "Leveraging Sparse Arrays for Large-ish (Feature) Data Sets"
 --- 
 
+<a href="{{ site.url }}/images/sparse.png"><img class="img-left" align="left" src="{{ site.url }}/images/sparse.png"></a>
+
 When building a machine learning model, you'll often have your feature data
 stored in one or more database tables (e.g., with a couple of million rows and
 maybe a thousand columns) where each row represents, say, an individual user and
