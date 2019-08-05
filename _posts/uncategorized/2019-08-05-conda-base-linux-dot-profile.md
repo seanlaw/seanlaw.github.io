@@ -11,7 +11,7 @@ Recently, I reinstalled miniconda and allowed it to set up `conda init` on Mac O
 
 Now, this seemed great but I noticed that all of the aliases that had been set in `.profile` were being ignored. In fact, it looks like `.profile` wasn't being sourced at all. When I looked inside of `.bash_profile`, I realized that the usual command to source the contents of `.profile` was missing:
 <br><br>
-{% highlight %}
+{% highlight sh%}
 if [ -f ~/.profile ]; then
    source ~/.profile
 fi
