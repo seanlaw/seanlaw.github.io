@@ -291,8 +291,8 @@ out.to_json('easy_as_pie.json')
 <br><br>
 
 ## Easy-As-Pie!
-
+<br><br>
 ## Update
-
+<br><br>
 <a href='https://stackoverflow.com/questions/58270692/write-pandas-dataframe-with-list-in-column-to-a-file'>Here are some ways to write this output (including when you have integers or floating point values instead of strings) to a jagged file with a space delimiter</a>
 
