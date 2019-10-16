@@ -39,5 +39,6 @@ if [ ! $HTTP_RESPONSE -eq 200 ]; then
 else
     # Remove/add/update cron job to once every minute
     (crontab -l | grep -v "$APPDIR/run_monitor.sh"; echo "* * * * * $APPDIR/run_monitor.sh") | sort - | uniq - | crontab -
+{% endhighlight %}
 <br><br>
 Problem solved! It's a subtle bug that was hard to detecth/debug but an obvious one after you've spent some time thinking about it. I hope to never encounter this again!
