@@ -15,12 +15,12 @@ def get_encoding(fname, n_lines=50):
     with open(fname, 'rb') as f:
         for i, row in enumerate(f):
             detector.feed(row)
-            if i >= n_line-1 or detector.done: 
-        break
+            if i >= n_lines-1 or detector.done: 
+                break
 
-     detector.close()
+    detector.close()
 
-     return detector.result['encoding']
+    return detector.result['encoding']
 {% endhighlight %}
 <br><br>
 Then you can call this function  with a file name:
