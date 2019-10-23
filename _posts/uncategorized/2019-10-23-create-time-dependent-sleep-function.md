@@ -11,7 +11,7 @@ import time
 import pytz
 
 # Sleep between 9a-11a Eastern Time
-    while 9 <= datetime.datetime.now(pytz.timezone('America/New_York')).time().hour <= 11:
+    while 9 <= datetime.datetime.now(pytz.timezone('America/New_York')).time().hour < 11:
         time.sleep(60)
 {% endhighlight %}
 <br><br>
