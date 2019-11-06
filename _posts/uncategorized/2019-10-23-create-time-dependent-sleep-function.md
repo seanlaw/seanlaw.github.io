@@ -11,8 +11,8 @@ import time
 import pytz
 
 # Sleep between 9a-11a Eastern Time
-    while 9 <= datetime.datetime.now(pytz.timezone('America/New_York')).time().hour < 11:
-        time.sleep(60)
+while 9 <= datetime.datetime.now(pytz.timezone('America/New_York')).time().hour < 11:
+    time.sleep(60)
 {% endhighlight %}
 <br><br>
 Things seemed fine when I ran the script locally and it would update the cron job as I had expected. So, I let it go on its merry way. A couple of weeks later and the site that I was monitoring goes down but I don't get any notifications. Again, running the above code directly from the command line worked perfectly but the cron job was not doing anything. Upon further inspection, the cron job was somehow looking for the `run_monitor.sh` script in the `home` directory. Then it dawned on me that the `pwd` was the problem. Since the cron job is being executed relative to the home directory, the `pwd` command within the script actually returns the home directory and not the location of the `run_monitor.sh` script. So, instead, we need the `$APPDIR` to point to the location of the `run_monitor.sh` script like this:
