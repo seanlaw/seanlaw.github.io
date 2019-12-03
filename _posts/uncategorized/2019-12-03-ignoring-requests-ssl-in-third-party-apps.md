@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ignoreing Requests SSL Verification in Third Party Apps
+title: Ignoring Requests SSL Verification in Third Party Apps
 ---
 
 <!--
