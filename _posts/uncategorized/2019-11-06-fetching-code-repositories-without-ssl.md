@@ -13,3 +13,10 @@ One of the most annoying things is not being able to clone a code repository fro
 git config --global http.sslverify false
 {% endhighlight %}
 <br><br>
+
+If code (or a file) is retrieved via `wget` then you can turn off certificate checking globally with:
+<br><br>
+{% highlight bash %}
+check_certificate = off
+{% endhighlight %}
+<br><br>
