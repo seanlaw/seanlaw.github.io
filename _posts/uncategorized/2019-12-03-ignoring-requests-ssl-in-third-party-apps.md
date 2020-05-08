@@ -19,9 +19,11 @@ self.verify = False
 
 Alternatively, directly from the command line, you might be able to tell the `ssl` Python module to temporarily disable SSL verification before running the Python program:
 <br><br>
+<!--
 {% highlight %}
 PYTHONHTTPSVERIFY=0 python your_script.py
 {% endhighlight %}
 <br><br>
+-->
 
 Note that this is a complete hack and not usually advised especially if the site that you are visiting is not trusted. This is only here for demonstration purposes. Do not use this code! 
