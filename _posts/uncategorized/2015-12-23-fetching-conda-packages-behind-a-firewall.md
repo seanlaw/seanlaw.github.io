@@ -35,8 +35,10 @@ trusted-host = pypi.python.org
 {% endhighlight %}
 <br><br>
 Alternatively, you can also temporarily disable SSL verification from the command line with:
+<!--
 {% highlight %}
 PYTHONHTTPSVERIFY=0 pip install some_trusted_package_name
 {% endhighlight %}
+-->
 <br><br>
 Do not use this code!
