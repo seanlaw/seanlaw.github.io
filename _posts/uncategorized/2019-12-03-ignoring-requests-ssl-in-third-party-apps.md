@@ -7,6 +7,8 @@ title: Ignoring Requests SSL Verification in Third Party Apps
 <img class="img-left" align="left" src="{{ site.url }}/images/">
 -->
 
+<i>WARNING: This is unsafe!</i>
+
 One of the most annoying things is not being able to perform an https request using a third party application (e.g., twine) if you're behind a network firewall that requires SSL verification. Luckily, you can turn this off by temporarily modifying the requests package. Open the `~/miniconda3/lib/python3.7/site-packages/requests/sessions.py` and, in the `Session` class, set
 <br><br>
 {% highlight python %}

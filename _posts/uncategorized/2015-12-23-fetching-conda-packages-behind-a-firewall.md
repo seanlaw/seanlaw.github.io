@@ -7,6 +7,8 @@ title: Fetching Conda Packages Behind a Firewall
 <img class="img-left" align="left" src="{{ site.url }}/images/">
 -->
 
+<i>WARNING: This is unsafe!</i>
+
 One of the most annoying things is not being able to update software if you're behind a network firewall that requires SSL verification. You can turn this off in Anaconda via
 <br><br>
 {% highlight python %}
@@ -31,4 +33,10 @@ trusted-host = pypi.python.org
                files.pythonhosted.org
                pypi.org
 {% endhighlight %}
-
+<br><br>
+Alternatively, you can also temporarily disable SSL verification from the command line with:
+{% highlight %}
+PYTHONHTTPSVERIFY=0 pip install some_trusted_package_name
+{% endhighlight %}
+<br><br>
+Do not use this code!
