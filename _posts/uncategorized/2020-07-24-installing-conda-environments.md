@@ -40,6 +40,7 @@ conda env update --file environment.yml
 Note that this installs the desired packages in the base conda environment. To install this in a named environment, you'll need:
 <br><br>
 {% highlight shell %}
+conda update conda
 conda env update --name environment_name --file environment.yml
 {% endhighlight %}
 <br><br>
