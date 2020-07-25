@@ -25,22 +25,23 @@ dependencies:
   - flake8
   - flake8-docstrings
   - black
-  - pytest
-  - codecov
+  - pytest-cov
   - jupyterlab
-  - bokeh
 {% endhighlight %}
 <br><br>
-And then, after reinstalling `miniconda`, I just need to execute this command in the same directory as the `environment.yml` file
+And then, after reinstalling `miniconda`, I just need to execute the following commands in the same directory as the `environment.yml` file
 <br><br>
 {% highlight shell %}
+conda update -y conda
+conda update -y --all
 conda env update --file environment.yml
 {% endhighlight %}
 <br><br>
 Note that this installs the desired packages in the base conda environment. To install this in a named environment, you'll need:
 <br><br>
 {% highlight shell %}
-conda update conda
+conda update -y conda
+conda update -y --all
 conda env update --name environment_name --file environment.yml
 {% endhighlight %}
 <br><br>
