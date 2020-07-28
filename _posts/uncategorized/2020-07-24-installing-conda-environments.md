@@ -8,13 +8,14 @@ When developing [STUMPY](https://stumpy.readthedocs.io/en/latest/), I frequently
 1. It ensures that I continue developing and testing using the latest dependencies
 2. It helps to ensure that no new local dependencies have crept into STUMPY
 
-However, every time I wipe out my environment (`rm -rf miniconda3/`, I have to try and remember what I need to re-install. Instead, it's far more efficient to document all of this in an `environment.yml` file:
+However, every time I wipe out my environment (i.e., `rm -rf /path/to/miniconda3/`), I have to try and remember what I need to re-install. Instead, it's far more efficient to document all of this in an `environment.yml` file:
 <br><br>
 {% highlight shell %}
 channels:
   - conda-forge
   - defaults
 dependencies:
+  - python>=3.6
   - numpy
   - scipy
   - numba
