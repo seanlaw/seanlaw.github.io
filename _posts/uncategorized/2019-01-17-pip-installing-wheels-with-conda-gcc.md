@@ -21,4 +21,11 @@ ln -s /path/to/anaconda/bin/x86_64-conda-cos6-linux-gnu-gcc /path/to/anaconda/bi
 ln -s /path/to/anaconda/bin/x86_64-conda-cos6-linux-gnu-g++ /path/to/anaconda/bin/g++
 {% endhighlight %}
 <br><br>
+Alternatively, you can avoid the symbolic link by setting your environment variables accordingly
+<br><br>
+{% highlight python %}
+export CC=/path/to/anaconda/bin/x86_64-conda_cos6-linux-gnu-gcc
+export CXX=/path/to/anaconda/bin/x86_64-conda_cos6-linux-gnu-g++
+{% endhighlight %}
+<br><br>
 Now, my pip install command is able to compile the wheel successfully! 
