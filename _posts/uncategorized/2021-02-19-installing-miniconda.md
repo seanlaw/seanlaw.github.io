@@ -43,30 +43,30 @@ if [[ `grep EDITOR $HOME/.bashrc | wc -l` -lt "1" ]]; then
 fi
 
 if [[ `grep syntax $HOME/.vimrc | wc -l` -lt "1" ]]; then
-	echo "set viminfo=\'10,\"100,:20,%,n~/.viminfo" >> $HOME/.vimrc
-	echo "" >> $HOME/.vimrc
-	echo 'function! ResCur()' >> $HOME/.vimrc
-	echo "    if line(\"'\\\"\") <= line(\"$\")" >> $HOME/.vimrc
-	echo "        normal! g\`\"" >> $HOME/.vimrc
-	echo '        return 1' >> $HOME/.vimrc
-	echo '    endif' >> $HOME/.vimrc
-	echo 'endfunction' >> $HOME/.vimrc
-	echo "" >> $HOME/.vimrc
-	echo 'augroup resCur' >> $HOME/.vimrc
-	echo '    autocmd!' >> $HOME/.vimrc
-	echo '    autocmd BufWinEnter * call ResCur()' >> $HOME/.vimrc
-	echo 'augroup END' >> $HOME/.vimrc
-	echo "" >> $HOME/.vimrc
+    echo "set viminfo=\'10,\"100,:20,%,n~/.viminfo" >> $HOME/.vimrc
+    echo "" >> $HOME/.vimrc
+    echo 'function! ResCur()' >> $HOME/.vimrc
+    echo "    if line(\"'\\\"\") <= line(\"$\")" >> $HOME/.vimrc
+    echo "        normal! g\`\"" >> $HOME/.vimrc
+    echo '        return 1' >> $HOME/.vimrc
+    echo '    endif' >> $HOME/.vimrc
+    echo 'endfunction' >> $HOME/.vimrc
+    echo "" >> $HOME/.vimrc
+    echo 'augroup resCur' >> $HOME/.vimrc
+    echo '    autocmd!' >> $HOME/.vimrc
+    echo '    autocmd BufWinEnter * call ResCur()' >> $HOME/.vimrc
+    echo 'augroup END' >> $HOME/.vimrc
+    echo "" >> $HOME/.vimrc
+    echo "set clipboard=unnamed" >> $HOME/.vimrc
+    echo "set cindent" >> $HOME/.vimrc
+    echo "set smartindent" >> $HOME/.vimrc
+    echo "set autoindent" >> $HOME/.vimrc
+    echo "set paste" >> $HOME/.vimrc
+    echo "set ruler" >> $HOME/.vimrc
     echo "syntax on" >> $HOME/.vimrc
     echo "set tabstop=4" >> $HOME/.vimrc
     echo "set shiftwidth=4" >> $HOME/.vimrc
     echo "set expandtab" >> $HOME/.vimrc
-	echo "set clipboard=unnamed" >> $HOME/.vimrc
-	echo "set cindent" >> $HOME/.vimrc
-	echo "set smartindent" >> $HOME/.vimrc
-	echo "set autoindent" >> $HOME/.vimrc
-	echo "set paste" >> $HOME/.vimrc
-	echo "set ruler" >> $HOME/.vimrc
 fi
 
 {% endhighlight %}
