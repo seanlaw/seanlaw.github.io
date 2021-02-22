@@ -18,27 +18,31 @@ $MINICONDADIR/bin/conda update -y conda
 $MINICONDADIR/bin/conda update -y --all
 $MINICONDADIR/bin/conda install -y -c conda-forge mamba jupyterlab
 
-if [[ `grep python $HOME/.bashrc | wc -l` -lt "1" ]]; then
-    echo 'alias python="ipython"' >> $HOME/.bashrc
+if [[ `grep "alias python" $HOME/.bashrc | wc -l` -lt "1" ]]; then
+    echo 'if [[ `which ipython | wc -l` -gt "0" ]]; then' >> $HOME/.bashrc
+    echo '    alias python="ipython"' >> $HOME/.bashrc
+    echo 'fi' >> $HOME/.bashrc
 fi
 
-if [[ `grep ipynb $HOME/.bashrc | wc -l` -lt "1" ]]; then
-    echo 'alias ipynb="jupyter-lab"' >> $HOME/.bashrc
+if [[ `grep "alias ipynb" $HOME/.bashrc | wc -l` -lt "1" ]]; then
+    echo 'if [[ `which jupyter-lab | wc -l` -gt "0" ]]; then' >> $HOME/.bashrc
+    echo '    alias ipynb="jupyter-lab"' >> $HOME/.bashrc
+    echo 'fi' >> $HOME/.bashrc
 fi
 
-if [[ `grep rm $HOME/.bashrc | wc -l` -lt "1" ]]; then
+if [[ `grep "alias rm" $HOME/.bashrc | wc -l` -lt "1" ]]; then
     echo 'alias rm="rm -i"' >> $HOME/.bashrc
 fi
 
-if [[ `grep cp $HOME/.bashrc | wc -l` -lt "1" ]]; then
+if [[ `grep "alias cp" $HOME/.bashrc | wc -l` -lt "1" ]]; then
     echo 'alias cp="cp -i"' >> $HOME/.bashrc
 fi
 
-if [[ `grep vim $HOME/.bashrc | wc -l` -lt "1" ]]; then
+if [[ `grep "alias vim" $HOME/.bashrc | wc -l` -lt "1" ]]; then
     echo 'alias vi="vim"' >> $HOME/.bashrc
 fi
 
-if [[ `grep EDITOR $HOME/.bashrc | wc -l` -lt "1" ]]; then
+if [[ `grep "alias EDITOR" $HOME/.bashrc | wc -l` -lt "1" ]]; then
     echo 'export EDITOR="vim"' >> $HOME/.bashrc
 fi
 
