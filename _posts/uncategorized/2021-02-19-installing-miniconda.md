@@ -17,6 +17,7 @@ bash ./Miniconda3-latest-Linux-x86_64.sh -f -b -p $MINICONDADIR
 $MINICONDADIR/bin/conda init
 $MINICONDADIR/bin/conda update -y conda
 $MINICONDADIR/bin/conda update -y --all
+# $MINICONDADIR/bin/conda install -y -c conda-forge python=3.9
 $MINICONDADIR/bin/conda install -y -c conda-forge mamba jupyterlab
 
 if [[ `grep "alias python" $HOME/.bashrc | wc -l` -lt "1" ]]; then
