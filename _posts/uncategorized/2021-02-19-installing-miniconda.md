@@ -11,7 +11,8 @@ When developing on a new VM, this is the basic setup that I like to build on top
 MINICONDADIR="$HOME/miniconda3"
 
 rm -rf $MINICONDADIR
-wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+wget -c https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# curl -O 'https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh'
 bash ./Miniconda3-latest-Linux-x86_64.sh -f -b -p $MINICONDADIR
 $MINICONDADIR/bin/conda init
 $MINICONDADIR/bin/conda update -y conda
