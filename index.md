@@ -9,7 +9,7 @@ header: About
 <img class="img-left" align="left" src="/images/seanlaw.thumb.png">
 <h3>About</h3> 
 <br>
-I am an <a href="https://www.linkedin.com/in/seanlawphd/">senior applied research scientist</a> and <a href="https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century/">lead data scientist</a> currently working with a multi-talented R&D team at a Fortune 500 finance firm. I have experience producing <a href="http://pubs.acs.org/doi/abs/10.1021/jz501811k">cutting edge methodologies</a>, building <a href="http://onlinelibrary.wiley.com/doi/10.1002/jcc.23683/abstract">high-performance predictive models</a>, developing rapid prototypes, and I am an inventor on several finance-related patents. 
+I am a <a href="https://www.linkedin.com/in/seanlawphd/">Principal Data Scientist</a> currently working with a multi-talented R&D team at a Fortune 500 finance firm. I have experience producing <a href="http://pubs.acs.org/doi/abs/10.1021/jz501811k">cutting edge methodologies</a>, building <a href="http://onlinelibrary.wiley.com/doi/10.1002/jcc.23683/abstract">high-performance predictive models</a>, developing rapid prototypes, and I am an inventor on several finance-related patents. 
 <br><br>
 Additionally, I co-organize the monthly <a href="https://www.meetup.com/PyData-Ann-Arbor/">PyData Ann Arbor data science meetup</a> and I am also the creator and core maintainer of <a href="https://github.com/TDAmeritrade/stumpy">STUMPY</a>, a powerful and scalable open source Python library that can be used for a variety of time series data mining tasks.
 <br><br>
