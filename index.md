@@ -11,7 +11,7 @@ header: About
 <br>
 I am a <a href="https://www.linkedin.com/in/seanlawphd/">Principal Data Scientist</a> currently working with a multi-talented R&D team at a Fortune 500 finance firm. I have experience producing <a href="http://pubs.acs.org/doi/abs/10.1021/jz501811k">cutting edge methodologies</a>, building <a href="http://onlinelibrary.wiley.com/doi/10.1002/jcc.23683/abstract">high-performance predictive models</a>, developing rapid prototypes, and I am an inventor on several finance-related patents. 
 <br><br>
-Additionally, I co-organize the monthly <a href="https://www.meetup.com/PyData-Ann-Arbor/">PyData Ann Arbor data science meetup</a> and I am also the creator and core maintainer of <a href="https://github.com/TDAmeritrade/stumpy">STUMPY</a>, a powerful and scalable open source Python library that can be used for a variety of time series data mining tasks.
+Additionally, I co-organize the monthly <a href="https://www.meetup.com/PyData-Ann-Arbor/">PyData Ann Arbor data science meetup</a> and I am also the creator and core maintainer of <a href="https://github.com/TDAmeritrade/stumpy">STUMPY</a>, a powerful and scalable open source Python package for modern time series analysis.
 <br><br>
 For data munging, analysis, visualization, and deep dives, I use the <a href="http://www.pydata.org">PyData stack</a>. However, various command-line tools can be found in my daily arsenal. <a href="http://git-scm.com">Git</a> is my distributed version control system of choice.
 <br><br>
