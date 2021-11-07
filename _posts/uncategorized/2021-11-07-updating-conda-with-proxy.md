@@ -28,12 +28,14 @@ bash ./Miniconda3-latest-MacOSX-x86_64.sh -f -b -p miniconda3
 {% endhighlight %}
 <br><br> 
 
-With the proxy function above, you can now install other packages with:
+With the proxy function above, you can now update conda and install other packages with:
 
 <br><br>
 {% highlight shell %}
 proxy
-conda install -c conda-forge stumpy numpy scipy numba
+conda update -y conda
+conda update -y --all
+conda install -y -c conda-forge stumpy numpy scipy numba
 {% endhighlight %}
 <br><br>
 
