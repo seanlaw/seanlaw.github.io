@@ -14,3 +14,5 @@ which should produce:
 <img src="https://render.githubusercontent.com/render/math?math=a^{2} %2B b^{2} = c^{2}">
 <br><br>
 Now, you should be able to embed this anywhere!
+
+Check out <a href="https://gist.github.com/a-rodin/fef3f543412d6e1ec5b6cf55bf197d7b">this thread</a> to add additional formatting like superscript or fractions
