@@ -18,13 +18,13 @@ while True:
 <br><br>
 To prevent the session from timing out, one common way to avoid this is to use:
 {% highlight bash %}
-nohup ./run.sh &> LOG &
+nohup ./run.py &> LOG &
 {% endhighlight %}
 <br><br>
 This will execute the command in the background and also write any output to a LOG file. However, if I come back months later and forget that it is still running and I execute this command again then I might end up having multiple processes running the same command. To avoid this, we can do a little better and ensure that we kill the existing process. This typically requires recording the PID of the original process:
 {% highlight bash %}
 cat PID | xargs kill -9 2>/dev/null
-nohup ./run.sh &> LOG &
+nohup ./run.py &> LOG &
 echo $! > PID
 {% endhighlight %}
 <br><br>
