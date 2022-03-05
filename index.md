@@ -6,7 +6,7 @@ header: About
 ---
 {% include JB/setup %}
 
-<img class="img-left" align="left" src="/images/seanlaw.thumb.png">
+<img class="img-left" align="left" src="/images/seanlaw.jpg">
 <h3>About</h3> 
 <br>
 I am a <a href="https://www.linkedin.com/in/seanlawphd/">Principal Data Scientist</a> currently working with a multi-talented R&D team at a Fortune 500 finance firm. I have experience producing <a href="http://pubs.acs.org/doi/abs/10.1021/jz501811k">cutting edge methodologies</a>, building <a href="http://onlinelibrary.wiley.com/doi/10.1002/jcc.23683/abstract">high-performance predictive models</a>, developing rapid prototypes, and I am an inventor on several finance-related patents. 
