@@ -21,7 +21,7 @@ urlencode(){
     done
 }
 
-prox(){
+proxy(){
     hostname="proxy.yourcompany.com"
     port="8080"
     user="$(whoami)"
