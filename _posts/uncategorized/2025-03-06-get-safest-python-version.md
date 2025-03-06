@@ -22,7 +22,7 @@ Essentially, it scrapes the version table from "https://devguide.python.org/vers
 
 As a bonus, you can also retrieve the minimum Python version or comptaible numpy/numba Python version using:
 <br><br>
-% highlight shell %}
+{% highlight shell %}
 #!/bin/bash
 
 get_min__python_version()
